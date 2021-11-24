@@ -26,11 +26,14 @@ import { FlowchartFunctionCallUpdate } from './flowchart/flowchart-function-call
 import { FlowchartInputOutputUpdate } from './flowchart/flowchart-input-output/flowchart-input-output-update';
 import { FlowchartFlowlineUpdate } from './flowchart/flowchart-flowline/flowchart-flowline-update';
 import { ColorLegendUpdate } from './common/color-legend/color-legend-update';
+import { MarkedGraphEdgeUpdate } from './marked-graph/marked-graph-edge/marked-graph-edge-update';
+import { MarkedGraphNodeUpdate } from './marked-graph/marked-graph-node/marked-graph-node-update';
 
 export type Popups = { [key in UMLElementType | UMLRelationshipType]: ComponentType<{ element: any }> | null };
 export const Popups: { [key in UMLElementType | UMLRelationshipType]: ComponentType<{ element: any }> | null } = {
   // Elements
   [UMLElementType.Package]: DefaultPopup,
+  [UMLElementType.MarkedGraphNode]: MarkedGraphNodeUpdate,
   [UMLElementType.Class]: UMLClassifierUpdate,
   [UMLElementType.AbstractClass]: UMLClassifierUpdate,
   [UMLElementType.Interface]: UMLClassifierUpdate,
@@ -69,6 +72,7 @@ export const Popups: { [key in UMLElementType | UMLRelationshipType]: ComponentT
   [UMLElementType.FlowchartInputOutput]: FlowchartInputOutputUpdate,
   [UMLElementType.ColorLegend]: ColorLegendUpdate,
   // Relationships
+  [UMLRelationshipType.MarkedGraphEdge]: MarkedGraphEdgeUpdate,
   [UMLRelationshipType.ClassAggregation]: UMLClassAssociationUpdate,
   [UMLRelationshipType.ClassBidirectional]: UMLClassAssociationUpdate,
   [UMLRelationshipType.ClassComposition]: UMLClassAssociationUpdate,

@@ -115,6 +115,11 @@
       "FlowchartInputOutput": "Ein- und Ausgabe",
       "FlowchartFlowline": "Verbindung"
     },
+    "MarkedGraph": {
+      "MarkedGraphNode": "Knoten",
+      "MarkedGraphMark": "Markierung",
+      "MarkedGraphEdge": "Kante"
+    },
     "ColorLegend": {
       "ColorLegend": "Farbe Beschreibung"
     }

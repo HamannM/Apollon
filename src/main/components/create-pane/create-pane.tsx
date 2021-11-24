@@ -7,6 +7,7 @@ import { composeClassPreview } from '../../packages/uml-class-diagram/class-prev
 import { composeCommunicationPreview } from '../../packages/uml-communication-diagram/communication-preview';
 import { composeComponentPreview } from '../../packages/uml-component-diagram/component-preview';
 import { composeDeploymentPreview } from '../../packages/uml-deployment-diagram/deployment-preview';
+import { composeMarkedGraphPreview } from '../../packages/marked-graph/marked-graph-preview';
 import { composeObjectPreview } from '../../packages/uml-object-diagram/object-preview';
 import { composeUseCasePreview } from '../../packages/uml-use-case-diagram/use-case-preview';
 import { UMLElement } from '../../services/uml-element/uml-element';
@@ -79,6 +80,9 @@ const getInitialState = ({ type, canvas, translate, colorEnabled, scale }: Props
       break;
     case UMLDiagramType.Flowchart:
       previews.push(...composeFlowchartPreview(canvas, translate, scale));
+      break;
+    case UMLDiagramType.MarkedGraph:
+      previews.push(...composeMarkedGraphPreview(canvas, translate, scale));
   }
   if (colorEnabled) {
     utils.push(

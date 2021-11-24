@@ -45,6 +45,8 @@ import { FlowchartProcessComponent } from './flowchart/flowchart-process/flowcha
 import { FlowchartDecisionComponent } from './flowchart/flowchart-decision/flowchart-decision-component';
 import { FlowchartFunctionCallComponent } from './flowchart/flowchart-function-call/flowchart-function-call-component';
 import { FlowchartInputOutputComponent } from './flowchart/flowchart-input-output/flowchart-input-output-component';
+import { MarkedGraphNodeComponent } from './marked-graph/marked-graph-node/marked-graph-node-component';
+import { MarkedGraphEdgeComponent } from './marked-graph/marked-graph-edge/marked-graph-edge-component';
 import { ColorLegendComponent } from './common/color-legend/color-legend-component';
 
 export const Components: {
@@ -52,6 +54,7 @@ export const Components: {
     | FunctionComponent<{ element: any; scale: number }>
     | ConnectedComponent<FunctionComponent<any>, { element: any; scale: number }>;
 } = {
+  [UMLElementType.MarkedGraphNode]: MarkedGraphNodeComponent,
   [UMLElementType.Package]: UMLClassPackageComponent,
   [UMLElementType.Class]: UMLClassifierComponent,
   [UMLElementType.AbstractClass]: UMLClassifierComponent,
@@ -90,6 +93,7 @@ export const Components: {
   [UMLElementType.FlowchartInputOutput]: FlowchartInputOutputComponent,
   [UMLElementType.FlowchartFunctionCall]: FlowchartFunctionCallComponent,
   [UMLElementType.ColorLegend]: ColorLegendComponent,
+  [UMLRelationshipType.MarkedGraphEdge]: MarkedGraphEdgeComponent,
   [UMLRelationshipType.ClassAggregation]: UMLAssociationComponent,
   [UMLRelationshipType.ClassBidirectional]: UMLAssociationComponent,
   [UMLRelationshipType.ClassComposition]: UMLAssociationComponent,

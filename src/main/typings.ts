@@ -107,6 +107,11 @@ export type UMLCommunicationLink = UMLRelationship & {
   }[];
 };
 
+export type MarkedGraphNode = UMLElement & {
+  marking: boolean;
+};
+
+
 export type FeedbackCorrectionStatus = {
   description?: string;
   status: 'CORRECT' | 'INCORRECT' | 'NOT_VALIDATED';

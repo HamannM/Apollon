@@ -11,6 +11,7 @@ import { SyntaxTreeElementType } from './syntax-tree';
 import { FlowchartElementType } from './flowchart';
 import { ColorLegendElementType } from './common/color-legend/index';
 import { ReachabilityGraphElementType } from './uml-reachability-graph';
+import { MarkedGraphElementType } from './marked-graph';
 
 export type UMLElementType =
   | keyof typeof ClassElementType
@@ -24,6 +25,7 @@ export type UMLElementType =
   | keyof typeof ReachabilityGraphElementType
   | keyof typeof SyntaxTreeElementType
   | keyof typeof FlowchartElementType
+  | keyof typeof MarkedGraphElementType
   | keyof typeof ColorLegendElementType;
 
 export const UMLElementType = {
@@ -39,6 +41,7 @@ export const UMLElementType = {
   ...SyntaxTreeElementType,
   ...FlowchartElementType,
   ...ColorLegendElementType,
+  ...MarkedGraphElementType,
 };
 
 export const UMLElementsForDiagram: { [key in UMLDiagramType]: any } = {
@@ -54,6 +57,7 @@ export const UMLElementsForDiagram: { [key in UMLDiagramType]: any } = {
     [UMLDiagramType.ReachabilityGraph]: ReachabilityGraphElementType,
     [UMLDiagramType.SyntaxTree]: SyntaxTreeElementType,
     [UMLDiagramType.Flowchart]: FlowchartElementType,
+    [UMLDiagramType.MarkedGraph]: MarkedGraphElementType,
   },
   ...ColorLegendElementType,
 };

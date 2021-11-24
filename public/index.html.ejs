@@ -23,17 +23,7 @@
           <h3 class="header">Diagram Type</h3>
           <div class="dropdown">
             <select name="type" onchange="apollon.onChange(event)">
-              <option value="ClassDiagram">Class Diagram</option>
-              <option value="ObjectDiagram">Object Diagram</option>
-              <option value="ActivityDiagram">Activity Diagram</option>
-              <option value="UseCaseDiagram">Use Case Diagram</option>
-              <option value="CommunicationDiagram">Communication Diagram</option>
-              <option value="ComponentDiagram">Component Diagram</option>
-              <option value="DeploymentDiagram">Deployment Diagram</option>
-              <option value="PetriNet">Petri Net</option>
-              <option value="ReachabilityGraph">Reachability Graph</option>
-              <option value="SyntaxTree">Syntax Tree</option>
-              <option value="Flowchart">Flowchart</option>
+              <option value="MarkedGraph">Graph with Markings </option>
             </select>
           </div>
         </section>
@@ -63,9 +53,9 @@
         <section>
           <h3 class="header">Export</h3>
           <div class="switch">
-            <button onclick="apollon.draw()">All</button>
-            <button onclick="apollon.draw('include')">Include</button>
-            <button onclick="apollon.draw('exclude')">Exclude</button>
+            <button onclick="apollon.draw()">Export</button>
+            <!--<button onclick="apollon.draw('include')">Include</button>
+            <button onclick="apollon.draw('exclude')">Exclude</button> -->
           </div>
         </section>
         <section>

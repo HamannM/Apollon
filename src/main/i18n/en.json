@@ -115,6 +115,11 @@
       "FlowchartInputOutput": "Input Output",
       "FlowchartFlowline": "Flowline"
     },
+    "MarkedGraph": {
+      "MarkedGraphNode": "Node",
+      "MarkedGraphMark": "Marking",
+      "MarkedGraphEdge": "Edge"
+    },
     "ColorLegend": {
       "ColorLegend": "Color Description"
     }
