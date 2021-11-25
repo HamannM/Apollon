@@ -57,6 +57,11 @@ export const draw = (mode?: 'include' | 'exclude') => {
   */
 };
 
+export const getModelAsJson = () => {
+  if (!editor) return;
+  return editor.model;
+};
+
 const render = () => {
   save();
   if (editor) {
