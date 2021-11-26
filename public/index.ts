@@ -88,12 +88,6 @@ taskDropDown.addEventListener('change', (e) => {
   taskDescriptionNode!.innerHTML = taskDescriptionMap.get(taskDropDown.value)!;
 });
 
-function resetAssessmentUiElements() {
-  document.getElementById('assessmentFeedbackSection')!.style.display = 'none';
-  document.getElementById('waitingForAssessmentResults')!.style.display = 'inline';
-  document.getElementById('assessmentResults')!.innerHTML = '';
-}
-
 export function submitSolution() {
   resetAssessmentUiElements();
   const payload = getModelAsJson();
@@ -103,7 +97,16 @@ export function submitSolution() {
 
   // @ts-ignore
   requestAssessment(payload).then((response) => {
-    document.getElementById('assessmentResults')!.innerHTML = 'assessment results';
+
+    // tslint:disable-next-line:no-console
+    console.log(response);
+
+    const assessmentResponse : AssessmentResponse =  {
+      assessmentResponse : response.assessmentResponse,
+      message : response.message
+    };
+
+    document.getElementById('assessmentResults')!.innerHTML = assessmentResponse.message;
     toggleDomElementDisplayById('waitingForAssessmentResults');
   }).catch((error) => {
     document.getElementById('assessmentResults')!.innerHTML = 'An internal error has occurred.';
@@ -132,4 +135,15 @@ export function toggleDomElementDisplayById(id: string) {
       element.style.display = 'none';
     }
   }
+}
+
+function resetAssessmentUiElements() {
+  document.getElementById('assessmentFeedbackSection')!.style.display = 'none';
+  document.getElementById('waitingForAssessmentResults')!.style.display = 'inline';
+  document.getElementById('assessmentResults')!.innerHTML = '';
+}
+
+interface AssessmentResponse {
+  assessmentResponse : string;
+  message : string;
 }
