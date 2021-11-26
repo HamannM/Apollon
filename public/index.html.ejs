@@ -42,7 +42,7 @@
         <section>
           <h3 class="header">Assessment</h3>
           <div class="switch">
-            <button onclick="submitSolution()">Submit Solution</button>
+            <button onclick="apollon.submitSolution()">Submit Solution</button>
           </div>
           <div></div>
         </section>
@@ -50,47 +50,24 @@
           <h3 class="header">Feedback</h3>
           <div id="assessmentFeedbackText">
           </div>
-          <div></div>
+          <div>
+            <div class='blobs-container' id='waitingForAssessmentResults'>
+              <div class='blob'></div>
+              <div class='blob'></div>
+              <div class='blob'></div>
+            </div>
+            <div id='assessmentResults'>
+
+            </div>
+          </div>
+
         </section>
       </aside>
     </div>
   </body>
 
   <script>
-    // for the sake of the prototype, this mess of a code is gonna be in the template
-    let taskDescriptionPlanarity = "Assesses whether the given graph is planar.";
-    let taskDescriptionConnectivity = "Assesses whether the given graph is connected.";
-    let taskDescriptionCutVertex = "Assesses whether the selected vertex is a cut vertex.";
 
-    let taskDescriptionMap = new Map([
-      ["PLANARITY", taskDescriptionPlanarity],
-      ["CONNECTIVITY", taskDescriptionConnectivity],
-      ["CUT_VERTEX", taskDescriptionCutVertex],
-    ]);
-
-
-    let taskDescriptionNode = document.getElementById("taskDescription");
-
-    let taskDropDown = document.getElementById("taskDropDown");
-    taskDropDown.selectedIndex = -1;
-    taskDropDown.addEventListener("change", e => {
-      taskDescriptionNode.innerHTML = taskDescriptionMap.get(taskDropDown.value);
-    });
-
-    function submitSolution() {
-      let payload = apollon.getModelAsJson();
-      payload.taskType = taskDropDown.value;
-
-      (async () => {
-        const assessmentResponse = await fetch('http://localhost:8889/graphAssessment', {
-          method: 'POST',
-          body: JSON.stringify(payload)
-        });
-        const content = await assessmentResponse.json();
-
-        console.log(content);
-      })();
-    }
 
 
   </script>

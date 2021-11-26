@@ -57,11 +57,6 @@ export const draw = (mode?: 'include' | 'exclude') => {
   */
 };
 
-export const getModelAsJson = () => {
-  if (!editor) return;
-  return editor.model;
-};
-
 const render = () => {
   save();
   if (editor) {
@@ -70,3 +65,70 @@ const render = () => {
   editor = new Apollon.ApollonEditor(container, options);
 };
 render();
+
+export const getModelAsJson = () => {
+  if (!editor) return { };
+  return editor.model;
+};
+
+const taskDescriptionPlanarity = 'Assesses whether the given graph is planar.';
+const taskDescriptionConnectivity = 'Assesses whether the given graph is connected.';
+const taskDescriptionCutVertex = 'Assesses whether the selected vertex is a cut vertex.';
+
+const taskDescriptionMap = new Map([
+  ['PLANARITY', taskDescriptionPlanarity],
+  ['CONNECTIVITY', taskDescriptionConnectivity],
+  ['CUT_VERTEX', taskDescriptionCutVertex],
+]);
+
+const taskDescriptionNode = document.getElementById('taskDescription');
+const taskDropDown = (document.getElementById('taskDropDown')) as HTMLSelectElement;
+taskDropDown.selectedIndex = -1;
+taskDropDown.addEventListener('change', (e) => {
+  taskDescriptionNode!.innerHTML = taskDescriptionMap.get(taskDropDown.value)!;
+});
+
+function resetAssessmentUiElements() {
+  document.getElementById('assessmentFeedbackSection')!.style.display = 'none';
+  document.getElementById('waitingForAssessmentResults')!.style.display = 'inline';
+}
+
+export function submitSolution() {
+  resetAssessmentUiElements();
+  const payload = getModelAsJson();
+  // for the sake of the prototype..
+  // @ts-ignore
+  payload!.taskType = taskDropDown.value;
+
+  // @ts-ignore
+  requestAssessment(payload).then((response) => {
+    document.getElementById('assessmentResults')!.innerHTML = 'assessment results';
+    toggleDomElementDisplayById('waitingForAssessmentResults');
+  }).catch((error) => {
+    document.getElementById('assessmentResults')!.innerHTML = 'An internal error has occurred.';
+    toggleDomElementDisplayById('waitingForAssessmentResults');
+  });
+
+}
+
+async function requestAssessment(payload: Apollon.UMLModel | undefined) {
+  toggleDomElementDisplayById('assessmentFeedbackSection');
+  const assessmentResponse = await fetch('http://localhost:8889/graphAssessment', {
+    method: 'POST',
+    body: JSON.stringify(payload),
+  });
+  if(assessmentResponse.ok){
+    return assessmentResponse.json();
+  }
+}
+
+export function toggleDomElementDisplayById(id: string) {
+  const element = document.getElementById(id);
+  if (element != null) {
+    if (window.getComputedStyle(element, null).display === 'none') {
+      element.style.display = 'inline';
+    } else {
+      element.style.display = 'none';
+    }
+  }
+}
