@@ -79,31 +79,17 @@
 
     function submitSolution() {
       let payload = apollon.getModelAsJson();
-      payload.taskType = taskDropDown.value
+      payload.taskType = taskDropDown.value;
 
-      let xhr = new XMLHttpRequest();
-      xhr.open("POST", "http://localhost:8889/graphAssessment", true);
-      xhr.onreadystatechange = function() {
-        if (xhr.readyState === 4 && xhr.status === 200) {
-          console.log(xhr.responseText)
-          console.log()
-        }
-      }
-      xhr.send(JSON.stringify(payload));
+      (async () => {
+        const assessmentResponse = await fetch('http://localhost:8889/graphAssessment', {
+          method: 'POST',
+          body: JSON.stringify(payload)
+        });
+        const content = await assessmentResponse.json();
 
-      /*      (async () => {
-              const rawResponse = await fetch('http://localhost:8889/graphAssessment', {
-                method: 'POST',
-                headers: {
-                  'Accept': 'application/json',
-                  'Content-Type': 'application/json'
-                },
-                body: JSON.stringify(payload)
-              });
-              const content = await rawResponse.json();
-
-              console.log(content);
-            })();*/
+        console.log(content);
+      })();
     }
 
 
