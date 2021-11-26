@@ -83,10 +83,20 @@ const taskDescriptionMap = new Map([
 
 const taskDescriptionNode = document.getElementById('taskDescription');
 const taskDropDown = (document.getElementById('taskDropDown')) as HTMLSelectElement;
+const submitAssessmentSection = document.getElementById('submitAssessmentSection');
 // taskDropDown.selectedIndex = -1;
 taskDropDown.addEventListener('change', (e) => {
   taskDescriptionNode!.innerHTML = taskDescriptionMap.get(taskDropDown.value)!;
+  submitAssessmentSection!.style.display = 'inline';
 });
+
+const assessmentResultsDOMNode = document.getElementById('assessmentResults');
+
+enum AssessmentResultType {
+  PASS = 'PASS',
+  FAIL = 'FAIL',
+  ERROR = 'ERROR'
+}
 
 export function submitSolution() {
   resetAssessmentUiElements();
@@ -102,14 +112,22 @@ export function submitSolution() {
     console.log(response);
 
     const assessmentResponse : AssessmentResponse =  {
-      assessmentResponse : response.assessmentResponse,
+      assessmentResponseType : response.assessmentResponse,
       message : response.message
     };
 
-    document.getElementById('assessmentResults')!.innerHTML = assessmentResponse.message;
+    assessmentResultsDOMNode!.innerHTML = assessmentResponse.message;
+
+    if(assessmentResponse.assessmentResponseType === AssessmentResultType.PASS){
+      assessmentResultsDOMNode!.classList.add('assessment-success');
+    }else{
+      assessmentResultsDOMNode!.classList.add('assessment-error');
+    }
+
     toggleDomElementDisplayById('waitingForAssessmentResults');
   }).catch((error) => {
-    document.getElementById('assessmentResults')!.innerHTML = 'An internal error has occurred.';
+    assessmentResultsDOMNode!.innerHTML = 'An internal error has occurred.';
+    assessmentResultsDOMNode!.classList.add('assessment-error');
     toggleDomElementDisplayById('waitingForAssessmentResults');
   });
 
@@ -137,13 +155,19 @@ export function toggleDomElementDisplayById(id: string) {
   }
 }
 
+const assessmentFeedbackSection = document.getElementById('assessmentFeedbackSection');
+const waitingForAssessmentResultsDOMNode = document.getElementById('waitingForAssessmentResults');
+
 function resetAssessmentUiElements() {
-  document.getElementById('assessmentFeedbackSection')!.style.display = 'none';
-  document.getElementById('waitingForAssessmentResults')!.style.display = 'inline';
-  document.getElementById('assessmentResults')!.innerHTML = '';
+  assessmentFeedbackSection!.style.display = 'none';
+  waitingForAssessmentResultsDOMNode!.style.display = 'inline';
+  assessmentResultsDOMNode!.innerHTML = '';
+  assessmentResultsDOMNode!.classList.forEach((cl) => {
+    assessmentResultsDOMNode!.classList.remove(cl);
+  });
 }
 
 interface AssessmentResponse {
-  assessmentResponse : string;
+  assessmentResponseType : string;
   message : string;
 }

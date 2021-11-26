@@ -172,6 +172,24 @@ aside.sidebar section > div {
   vertical-align: middle;
 }
 
+.assessment-error
+{
+  border: 1px solid #D8D8D8;
+  padding: 5px;
+  border-radius: 5px;
+  background-color: rgb(255, 249, 242);
+  color: rgb(211, 0, 0);
+}
+
+.assessment-success
+{
+  border: 1px solid #D8D8D8;
+  padding: 10px;
+  border-radius: 5px;
+  background-color: rgb(236, 255, 216);
+  color: green;
+}
+
 /**
   taken from https://www.florin-pop.com/blog/2019/03/css-pulse-effect/
  */
@@ -185,7 +203,6 @@ aside.sidebar section > div {
   margin: 10px;
   height: 5px;
   width: 5px;
-
   box-shadow: 0 0 0 0 rgba(0, 0, 0, 1);
   transform: scale(1);
   animation: pulse 1s infinite;
