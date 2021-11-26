@@ -83,7 +83,7 @@ const taskDescriptionMap = new Map([
 
 const taskDescriptionNode = document.getElementById('taskDescription');
 const taskDropDown = (document.getElementById('taskDropDown')) as HTMLSelectElement;
-taskDropDown.selectedIndex = -1;
+// taskDropDown.selectedIndex = -1;
 taskDropDown.addEventListener('change', (e) => {
   taskDescriptionNode!.innerHTML = taskDescriptionMap.get(taskDropDown.value)!;
 });
@@ -91,6 +91,7 @@ taskDropDown.addEventListener('change', (e) => {
 function resetAssessmentUiElements() {
   document.getElementById('assessmentFeedbackSection')!.style.display = 'none';
   document.getElementById('waitingForAssessmentResults')!.style.display = 'inline';
+  document.getElementById('assessmentResults')!.innerHTML = '';
 }
 
 export function submitSolution() {
