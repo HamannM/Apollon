@@ -71,14 +71,36 @@ export const getModelAsJson = () => {
   return editor.model;
 };
 
+import { predefinedConnectivityModel, predefinedCutVertexModel, predefinedPlanarityModel } from './predefinedModels';
+import { UMLModel } from '../lib';
+function loadDemoModel(taskKey: string){
+  if(editor != null){
+    // @ts-ignore
+    const newModel : UMLModel = taskModelMap.get(taskKey);
+    editor.model = newModel;
+  }
+}
+
 const taskDescriptionPlanarity = 'Assesses whether the given graph is planar.';
-const taskDescriptionConnectivity = 'Assesses whether the given graph is connected.';
-const taskDescriptionCutVertex = 'Assesses whether the selected vertex is a cut vertex.';
+const taskDescriptionConnectivity = 'This task assesses your knowledge about the <em>connectivity</em> of graphs. ' +
+  'Remove <em>exactly one</em> edge whose removal disconnects the graph.';
+const taskDescriptionCutVertex = 'This task assesses your knowledge about <em>cut vertices</em>. ' +
+  'This graph has exactly one cut vertex. Your task is to mark the correct vertex.';
+
+const taskPlanarity = 'PLANARITY';
+const taskConnectivity = 'CONNECTIVITY';
+const taskCutVertex = 'CUT_VERTEX';
 
 const taskDescriptionMap = new Map([
-  ['PLANARITY', taskDescriptionPlanarity],
-  ['CONNECTIVITY', taskDescriptionConnectivity],
-  ['CUT_VERTEX', taskDescriptionCutVertex],
+  [taskPlanarity, taskDescriptionPlanarity],
+  [taskConnectivity, taskDescriptionConnectivity],
+  [taskCutVertex, taskDescriptionCutVertex],
+]);
+
+const taskModelMap = new Map([
+  [taskPlanarity, predefinedPlanarityModel],
+  [taskConnectivity, predefinedConnectivityModel],
+  [taskCutVertex, predefinedCutVertexModel]
 ]);
 
 const taskDescriptionNode = document.getElementById('taskDescription');
@@ -88,6 +110,7 @@ const submitAssessmentSection = document.getElementById('submitAssessmentSection
 taskDropDown.addEventListener('change', (e) => {
   taskDescriptionNode!.innerHTML = taskDescriptionMap.get(taskDropDown.value)!;
   submitAssessmentSection!.style.display = 'inline';
+  loadDemoModel(taskDropDown.value);
 });
 
 const assessmentResultsDOMNode = document.getElementById('assessmentResults');
@@ -101,16 +124,14 @@ enum AssessmentResultType {
 export function submitSolution() {
   resetAssessmentUiElements();
   const payload = getModelAsJson();
+  // tslint:disable-next-line:no-console
+  console.log(editor!.model);
   // for the sake of the prototype..
   // @ts-ignore
   payload!.taskType = taskDropDown.value;
 
   // @ts-ignore
   requestAssessment(payload).then((response) => {
-
-    // tslint:disable-next-line:no-console
-    console.log(response);
-
     const assessmentResponse : AssessmentResponse =  {
       assessmentResponseType : response.assessmentResponse,
       message : response.message
