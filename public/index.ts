@@ -81,7 +81,8 @@ function loadDemoModel(taskKey: string){
   }
 }
 
-const taskDescriptionPlanarity = 'Assesses whether the given graph is planar.';
+const taskDescriptionPlanarity = 'This task assesses your knowledge about the <em>planarity</em> of graphs. ' +
+  'The graph is currently non-planar. Remove <em>exactly two edges</em> to make the graph planar.';
 const taskDescriptionConnectivity = 'This task assesses your knowledge about the <em>connectivity</em> of graphs. ' +
   'Remove <em>exactly one</em> edge whose removal disconnects the graph.';
 const taskDescriptionCutVertex = 'This task assesses your knowledge about <em>cut vertices</em>. ' +
