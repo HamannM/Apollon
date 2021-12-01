@@ -42,6 +42,14 @@ aside.sidebar section > div {
   padding: 0.6em 1em;
 }
 
+.taskbar {
+  background-color: #eef2f3;
+  line-height: 1.5;
+  font-size: 0.9rem;
+  font-weight: 300;
+  padding: 0.6em 1em;
+}
+
 .navbar-title {
   display: inline-block;
   vertical-align: middle;
