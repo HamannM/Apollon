@@ -720,8 +720,8 @@ export const predefinedPlanarityModel = {
   'version': '2.0.0',
   'type': 'MarkedGraph',
   'size': {
-    'width': 1020,
-    'height': 860
+    'width': 940,
+    'height': 720
   },
   'interactive': {
     'elements': [],
@@ -795,48 +795,6 @@ export const predefinedPlanarityModel = {
     }
   ],
   'relationships': [
-    {
-      'id': '0f30ab7d-514d-49f5-bddb-85f03b6a1799',
-      'name': '(2,3)',
-      'type': 'MarkedGraphEdge',
-      'owner': null,
-      'bounds': {
-        'x': 470,
-        'y': 0,
-        'width': 390,
-        'height': 300
-      },
-      'path': [
-        {
-          'x': 0,
-          'y': 80
-        },
-        {
-          'x': 0,
-          'y': 40
-        },
-        {
-          'x': 390,
-          'y': 40
-        },
-        {
-          'x': 390,
-          'y': 300
-        },
-        {
-          'x': 350,
-          'y': 300
-        }
-      ],
-      'source': {
-        'direction': 'Up',
-        'element': '520b4ceb-17bd-4905-baec-9e6fa652041e'
-      },
-      'target': {
-        'direction': 'Right',
-        'element': 'c93120a6-e791-43b0-a4d9-ac77ecb3f977'
-      }
-    },
     {
       'id': 'fed99bcd-5b25-41f2-8db7-aef6e9d62ca6',
       'name': '(3,4)',
