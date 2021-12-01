@@ -10,6 +10,8 @@ import {
   taskDropDown,
   toggleDomElementDisplayById,
 } from './sageAssessmentUiElements';
+import { AssessmentResponse } from './sageAssessmentResponse';
+import { AssessmentResultType } from './sageAssessmentResultType';
 
 const container = document.getElementById('apollon')!;
 let editor: Apollon.ApollonEditor | null = null;
@@ -96,12 +98,6 @@ taskDropDown.addEventListener('change', (e) => {
   resetAssessmentUiElements();
 });
 
-enum AssessmentResultType {
-  PASS = 'PASS',
-  FAIL = 'FAIL',
-  ERROR = 'ERROR'
-}
-
 export function submitSolution() {
   resetAssessmentUiElements();
   const payload = getModelAsJson();
@@ -146,7 +142,3 @@ async function requestAssessment(payload: Apollon.UMLModel | undefined) {
   }
 }
 
-interface AssessmentResponse {
-  assessmentResponseType : string;
-  message : string;
-}
