@@ -2,6 +2,14 @@ import * as Apollon from '../src/main';
 import './styles.css';
 import { UMLModel } from '../lib';
 import { taskDescriptionMap, taskModelMap } from './sageAssessmentTasks';
+import {
+  assessmentResultsDOMNode,
+  resetAssessmentUiElements,
+  submitAssessmentSection,
+  taskDescriptionNode,
+  taskDropDown,
+  toggleDomElementDisplayById,
+} from './sageAssessmentUiElements';
 
 const container = document.getElementById('apollon')!;
 let editor: Apollon.ApollonEditor | null = null;
@@ -68,7 +76,7 @@ const render = () => {
 };
 render();
 
-export const getModelAsJson = () => {
+const getModelAsJson = () => {
   if (!editor) return { };
   return editor.model;
 };
@@ -81,18 +89,12 @@ function loadDemoModel(taskKey: string){
   }
 }
 
-const taskDescriptionNode = document.getElementById('taskDescription');
-const taskDropDown = (document.getElementById('taskDropDown')) as HTMLSelectElement;
-const submitAssessmentSection = document.getElementById('submitAssessmentSection');
-// taskDropDown.selectedIndex = -1;
 taskDropDown.addEventListener('change', (e) => {
   taskDescriptionNode!.innerHTML = taskDescriptionMap.get(taskDropDown.value)!;
   submitAssessmentSection!.style.display = 'inline';
   loadDemoModel(taskDropDown.value);
   resetAssessmentUiElements();
 });
-
-const assessmentResultsDOMNode = document.getElementById('assessmentResults');
 
 enum AssessmentResultType {
   PASS = 'PASS',
@@ -142,29 +144,6 @@ async function requestAssessment(payload: Apollon.UMLModel | undefined) {
   if(assessmentResponse.ok){
     return assessmentResponse.json();
   }
-}
-
-export function toggleDomElementDisplayById(id: string) {
-  const element = document.getElementById(id);
-  if (element != null) {
-    if (window.getComputedStyle(element, null).display === 'none') {
-      element.style.display = 'inline';
-    } else {
-      element.style.display = 'none';
-    }
-  }
-}
-
-const assessmentFeedbackSection = document.getElementById('assessmentFeedbackSection');
-const waitingForAssessmentResultsDOMNode = document.getElementById('waitingForAssessmentResults');
-
-function resetAssessmentUiElements() {
-  assessmentFeedbackSection!.style.display = 'none';
-  waitingForAssessmentResultsDOMNode!.style.display = 'inline';
-  assessmentResultsDOMNode!.innerHTML = '';
-  assessmentResultsDOMNode!.classList.forEach((cl) => {
-    assessmentResultsDOMNode!.classList.remove(cl);
-  });
 }
 
 interface AssessmentResponse {
