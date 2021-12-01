@@ -1,5 +1,7 @@
 import * as Apollon from '../src/main';
 import './styles.css';
+import { UMLModel } from '../lib';
+import { taskDescriptionMap, taskModelMap } from './sageAssessmentTaskDescriptions';
 
 const container = document.getElementById('apollon')!;
 let editor: Apollon.ApollonEditor | null = null;
@@ -71,8 +73,6 @@ export const getModelAsJson = () => {
   return editor.model;
 };
 
-import { predefinedConnectivityModel, predefinedCutVertexModel, predefinedPlanarityModel } from './predefinedModels';
-import { UMLModel } from '../lib';
 function loadDemoModel(taskKey: string){
   if(editor != null){
     // @ts-ignore
@@ -80,29 +80,6 @@ function loadDemoModel(taskKey: string){
     editor.model = newModel;
   }
 }
-
-const taskDescriptionPlanarity = 'This task assesses your knowledge about the <em>planarity</em> of graphs. ' +
-  'The graph is currently planar. Add <em>exactly one edge</em> to make the graph non-planar.';
-const taskDescriptionConnectivity = 'This task assesses your knowledge about the <em>connectivity</em> of graphs. ' +
-  'Remove <em>exactly one</em> edge whose removal disconnects the graph.';
-const taskDescriptionCutVertex = 'This task assesses your knowledge about <em>cut vertices</em>. ' +
-  'This graph has exactly one cut vertex. Your task is to mark the correct vertex.';
-
-const taskPlanarity = 'PLANARITY';
-const taskConnectivity = 'CONNECTIVITY';
-const taskCutVertex = 'CUT_VERTEX';
-
-const taskDescriptionMap = new Map([
-  [taskPlanarity, taskDescriptionPlanarity],
-  [taskConnectivity, taskDescriptionConnectivity],
-  [taskCutVertex, taskDescriptionCutVertex],
-]);
-
-const taskModelMap = new Map([
-  [taskPlanarity, predefinedPlanarityModel],
-  [taskConnectivity, predefinedConnectivityModel],
-  [taskCutVertex, predefinedCutVertexModel]
-]);
 
 const taskDescriptionNode = document.getElementById('taskDescription');
 const taskDropDown = (document.getElementById('taskDropDown')) as HTMLSelectElement;
