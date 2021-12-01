@@ -89,6 +89,7 @@ taskDropDown.addEventListener('change', (e) => {
   taskDescriptionNode!.innerHTML = taskDescriptionMap.get(taskDropDown.value)!;
   submitAssessmentSection!.style.display = 'inline';
   loadDemoModel(taskDropDown.value);
+  resetAssessmentUiElements();
 });
 
 const assessmentResultsDOMNode = document.getElementById('assessmentResults');
