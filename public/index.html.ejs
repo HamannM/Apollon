@@ -16,22 +16,23 @@
         </span>
       </a>
     </header>
+    <div class='taskbar'>
+        <h3 class="header">Choose your task</h3>
+        <div class="dropdown">
+          <select name="task" id="taskDropDown">
+            <option selected disabled>Choose..</option>
+            <option value="PLANARITY" >Planarity</option>
+            <option value="CONNECTIVITY">Connectivity</option>
+            <option value="CUT_VERTEX">Cut Vertex</option>
+          </select>
+          <div id="taskDescription">
+          </div>
+        </div>
+    </div>
     <div class="container">
       <main id="apollon"></main>
       <aside class="sidebar">
-        <section>
-          <h3 class="header">Task</h3>
-          <div class="dropdown">
-            <select name="task" id="taskDropDown">
-              <option selected disabled>Choose..</option>
-              <option value="PLANARITY" >Planarity</option>
-              <option value="CONNECTIVITY">Connectivity</option>
-              <option value="CUT_VERTEX">Cut Vertex</option>
-            </select>
-            <div id="taskDescription">
-            </div>
-          </div>
-        </section>
+
 <!--        <section>
           <h3 class="header">Export</h3>
           <div class="switch">
