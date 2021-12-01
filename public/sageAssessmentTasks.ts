@@ -1,4 +1,4 @@
-import { predefinedConnectivityModel, predefinedCutVertexModel, predefinedPlanarityModel } from './predefinedModels';
+import { predefinedConnectivityModel, predefinedCutVertexModel, predefinedPlanarityModel } from './sageAssessmentPredefinedModels';
 
 const taskDescriptionPlanarity = 'This task assesses your knowledge about the <em>planarity</em> of graphs. ' +
   'The graph is currently planar. Add <em>exactly one edge</em> to make the graph non-planar.';

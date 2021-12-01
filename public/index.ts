@@ -1,7 +1,7 @@
 import * as Apollon from '../src/main';
 import './styles.css';
 import { UMLModel } from '../lib';
-import { taskDescriptionMap, taskModelMap } from './sageAssessmentTaskDescriptions';
+import { taskDescriptionMap, taskModelMap } from './sageAssessmentTasks';
 
 const container = document.getElementById('apollon')!;
 let editor: Apollon.ApollonEditor | null = null;
