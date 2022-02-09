@@ -108,6 +108,9 @@ class KeyboardEventListenerComponent extends Component<Props> {
       case 'Backspace':
       case 'Delete':
         event.preventDefault();
+        if(this.props.mode === ApollonMode.GraphInspection) {
+          break;
+        }
         this.props.delete();
         break;
       case 'Escape':
