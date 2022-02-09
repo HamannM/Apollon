@@ -1,7 +1,6 @@
 import * as Apollon from '../src/main';
 import { ApollonMode } from '../src/main';
 import './styles.css';
-import { UMLModel } from '../lib';
 import { taskDescriptionMap, taskModelMap } from './sageAssessmentTasks';
 import {
   assessmentResultsDOMNode,
