@@ -44,8 +44,7 @@ const enhance = compose<ComponentClass<OwnProps>>(
 
 class SidebarComponent extends Component<Props> {
   render() {
-    if (this.props.readonly || this.props.mode === ApollonMode.Assessment) return null;
-
+    if (this.props.readonly || this.props.mode === ApollonMode.Assessment || this.props.mode === ApollonMode.GraphInspection) return null;
     return (
       <Container scale={this.props.scale} id="modeling-editor-sidebar">
         {this.props.mode === ApollonMode.Exporting && (

@@ -1,4 +1,5 @@
 import * as Apollon from '../src/main';
+import { ApollonMode } from '../src/main';
 import './styles.css';
 import { UMLModel } from '../lib';
 import { taskDescriptionMap, taskModelMap } from './sageAssessmentTasks';
@@ -20,6 +21,7 @@ let options: Apollon.ApollonOptions = {
   colorEnabled: false,
   scale: 0.75,
   type: 'MarkedGraph',
+  mode: ApollonMode.GraphInspection
 };
 
 export const onChange = (event: MouseEvent) => {

@@ -10,6 +10,7 @@ export enum ApollonMode {
   Modelling = 'Modelling',
   Exporting = 'Exporting',
   Assessment = 'Assessment',
+  GraphInspection = 'GraphInspection'
 }
 
 export const enum ApollonView {
