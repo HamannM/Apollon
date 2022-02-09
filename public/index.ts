@@ -128,12 +128,11 @@ export function submitSolution() {
     assessmentResultsDOMNode!.classList.add('assessment-error');
     toggleDomElementDisplayById('waitingForAssessmentResults');
   });
-
 }
 
 async function requestAssessment(payload: Apollon.UMLModel | undefined) {
   toggleDomElementDisplayById('assessmentFeedbackSection');
-  const assessmentResponse = await fetch('http://localhost:8889/graphAssessment', {
+  const assessmentResponse = await fetch('/graphAssessment', {
     method: 'POST',
     body: JSON.stringify(payload),
   });
