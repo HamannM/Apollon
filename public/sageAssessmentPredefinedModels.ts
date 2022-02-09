@@ -360,11 +360,11 @@ export const predefinedCutVertexModel = {
   'type': 'MarkedGraph',
   'size': {
     'width': 920,
-    'height': 420
+    'height': 420,
   },
   'interactive': {
     'elements': [],
-    'relationships': []
+    'relationships': [],
   },
   'elements': [
     {
@@ -376,9 +376,9 @@ export const predefinedCutVertexModel = {
         'x': 0,
         'y': 120,
         'width': 100,
-        'height': 100
+        'height': 100,
       },
-      'marking': false
+      'marking': false,
     },
     {
       'id': 'eecef3a6-f503-40a0-9a96-203c2f64c174',
@@ -389,9 +389,9 @@ export const predefinedCutVertexModel = {
         'x': 240,
         'y': 260,
         'width': 100,
-        'height': 100
+        'height': 100,
       },
-      'marking': false
+      'marking': false,
     },
     {
       'id': 'ebc633af-df92-4c24-b238-12c74465055b',
@@ -402,9 +402,9 @@ export const predefinedCutVertexModel = {
         'x': 240,
         'y': 120,
         'width': 100,
-        'height': 100
+        'height': 100,
       },
-      'marking': false
+      'marking': false,
     },
     {
       'id': 'e2e32bb1-857d-45c3-81aa-7f68bb961557',
@@ -415,9 +415,9 @@ export const predefinedCutVertexModel = {
         'x': 490,
         'y': 0,
         'width': 100,
-        'height': 100
+        'height': 100,
       },
-      'marking': false
+      'marking': false,
     },
     {
       'id': '7c9c54b3-a5d8-4731-9f39-bc8f66abaedd',
@@ -428,9 +428,9 @@ export const predefinedCutVertexModel = {
         'x': 490,
         'y': 270,
         'width': 100,
-        'height': 100
+        'height': 100,
       },
-      'marking': false
+      'marking': false,
     },
     {
       'id': '3becfbf8-0cda-44d0-9795-5e734dec7ae9',
@@ -441,9 +441,9 @@ export const predefinedCutVertexModel = {
         'x': 780,
         'y': 0,
         'width': 100,
-        'height': 100
+        'height': 100,
       },
-      'marking': false
+      'marking': false,
     },
     {
       'id': '7e4f70ff-a374-4d0d-959e-5bbaa29e482c',
@@ -454,10 +454,10 @@ export const predefinedCutVertexModel = {
         'x': 780,
         'y': 270,
         'width': 100,
-        'height': 100
+        'height': 100,
       },
-      'marking': false
-    }
+      'marking': false,
+    },
   ],
   'relationships': [
     {
@@ -469,26 +469,26 @@ export const predefinedCutVertexModel = {
         'x': 830,
         'y': 100,
         'width': 1,
-        'height': 170
+        'height': 170,
       },
       'path': [
         {
           'x': 0,
-          'y': 170
+          'y': 170,
         },
         {
           'x': 0,
-          'y': 0
-        }
+          'y': 0,
+        },
       ],
       'source': {
         'direction': 'Up',
-        'element': '7e4f70ff-a374-4d0d-959e-5bbaa29e482c'
+        'element': '7e4f70ff-a374-4d0d-959e-5bbaa29e482c',
       },
       'target': {
         'direction': 'Down',
-        'element': '3becfbf8-0cda-44d0-9795-5e734dec7ae9'
-      }
+        'element': '3becfbf8-0cda-44d0-9795-5e734dec7ae9',
+      },
     },
     {
       'id': '0a919d42-5bfa-4810-83e0-e81a0574968b',
@@ -499,26 +499,26 @@ export const predefinedCutVertexModel = {
         'x': 590,
         'y': 50,
         'width': 190,
-        'height': 1
+        'height': 1,
       },
       'path': [
         {
           'x': 0,
-          'y': 0
+          'y': 0,
         },
         {
           'x': 190,
-          'y': 0
-        }
+          'y': 0,
+        },
       ],
       'source': {
         'direction': 'Right',
-        'element': 'e2e32bb1-857d-45c3-81aa-7f68bb961557'
+        'element': 'e2e32bb1-857d-45c3-81aa-7f68bb961557',
       },
       'target': {
         'direction': 'Left',
-        'element': '3becfbf8-0cda-44d0-9795-5e734dec7ae9'
-      }
+        'element': '3becfbf8-0cda-44d0-9795-5e734dec7ae9',
+      },
     },
     {
       'id': '092e8f40-6517-429a-8702-977a7ea30573',
@@ -529,26 +529,26 @@ export const predefinedCutVertexModel = {
         'x': 590,
         'y': 320,
         'width': 190,
-        'height': 1
+        'height': 1,
       },
       'path': [
         {
           'x': 0,
-          'y': 0
+          'y': 0,
         },
         {
           'x': 190,
-          'y': 0
-        }
+          'y': 0,
+        },
       ],
       'source': {
         'direction': 'Right',
-        'element': '7c9c54b3-a5d8-4731-9f39-bc8f66abaedd'
+        'element': '7c9c54b3-a5d8-4731-9f39-bc8f66abaedd',
       },
       'target': {
         'direction': 'Left',
-        'element': '7e4f70ff-a374-4d0d-959e-5bbaa29e482c'
-      }
+        'element': '7e4f70ff-a374-4d0d-959e-5bbaa29e482c',
+      },
     },
     {
       'id': '01fc3bc5-a7ec-4544-a041-d67d36c01604',
@@ -559,26 +559,26 @@ export const predefinedCutVertexModel = {
         'x': 540,
         'y': 100,
         'width': 1,
-        'height': 170
+        'height': 170,
       },
       'path': [
         {
           'x': 0,
-          'y': 170
+          'y': 170,
         },
         {
           'x': 0,
-          'y': 0
-        }
+          'y': 0,
+        },
       ],
       'source': {
         'direction': 'Up',
-        'element': '7c9c54b3-a5d8-4731-9f39-bc8f66abaedd'
+        'element': '7c9c54b3-a5d8-4731-9f39-bc8f66abaedd',
       },
       'target': {
         'direction': 'Down',
-        'element': 'e2e32bb1-857d-45c3-81aa-7f68bb961557'
-      }
+        'element': 'e2e32bb1-857d-45c3-81aa-7f68bb961557',
+      },
     },
     {
       'id': 'f5888a16-c3b5-486a-8124-d69dc04563ec',
@@ -589,30 +589,30 @@ export const predefinedCutVertexModel = {
         'x': 290,
         'y': 50,
         'width': 200,
-        'height': 70
+        'height': 70,
       },
       'path': [
         {
           'x': 200,
-          'y': 0
+          'y': 0,
         },
         {
           'x': 0,
-          'y': 0
+          'y': 0,
         },
         {
           'x': 0,
-          'y': 70
-        }
+          'y': 70,
+        },
       ],
       'source': {
         'direction': 'Left',
-        'element': 'e2e32bb1-857d-45c3-81aa-7f68bb961557'
+        'element': 'e2e32bb1-857d-45c3-81aa-7f68bb961557',
       },
       'target': {
         'direction': 'Up',
-        'element': 'ebc633af-df92-4c24-b238-12c74465055b'
-      }
+        'element': 'ebc633af-df92-4c24-b238-12c74465055b',
+      },
     },
     {
       'id': '343984b2-98ae-4330-b8dc-50ae52a61631',
@@ -623,34 +623,34 @@ export const predefinedCutVertexModel = {
         'x': 340,
         'y': 170,
         'width': 150,
-        'height': 150
+        'height': 150,
       },
       'path': [
         {
           'x': 150,
-          'y': 150
+          'y': 150,
         },
         {
           'x': 75,
-          'y': 150
+          'y': 150,
         },
         {
           'x': 75,
-          'y': 0
+          'y': 0,
         },
         {
           'x': 0,
-          'y': 0
-        }
+          'y': 0,
+        },
       ],
       'source': {
         'direction': 'Left',
-        'element': '7c9c54b3-a5d8-4731-9f39-bc8f66abaedd'
+        'element': '7c9c54b3-a5d8-4731-9f39-bc8f66abaedd',
       },
       'target': {
         'direction': 'Right',
-        'element': 'ebc633af-df92-4c24-b238-12c74465055b'
-      }
+        'element': 'ebc633af-df92-4c24-b238-12c74465055b',
+      },
     },
     {
       'id': 'b2abfcc3-b146-4656-82a0-2897a08ff9f4',
@@ -661,26 +661,26 @@ export const predefinedCutVertexModel = {
         'x': 100,
         'y': 170,
         'width': 140,
-        'height': 1
+        'height': 1,
       },
       'path': [
         {
           'x': 140,
-          'y': 0
+          'y': 0,
         },
         {
           'x': 0,
-          'y': 0
-        }
+          'y': 0,
+        },
       ],
       'source': {
         'direction': 'Left',
-        'element': 'ebc633af-df92-4c24-b238-12c74465055b'
+        'element': 'ebc633af-df92-4c24-b238-12c74465055b',
       },
       'target': {
         'direction': 'Right',
-        'element': '72bc0627-a91e-436c-9e7b-2d89a5406c32'
-      }
+        'element': '72bc0627-a91e-436c-9e7b-2d89a5406c32',
+      },
     },
     {
       'id': '922e6d7e-2555-4269-9e2c-68fc4b42fa88',
@@ -691,432 +691,153 @@ export const predefinedCutVertexModel = {
         'x': 290,
         'y': 220,
         'width': 1,
-        'height': 40
+        'height': 40,
       },
       'path': [
         {
           'x': 0,
-          'y': 40
+          'y': 40,
         },
         {
           'x': 0,
-          'y': 0
-        }
+          'y': 0,
+        },
       ],
       'source': {
         'direction': 'Up',
-        'element': 'eecef3a6-f503-40a0-9a96-203c2f64c174'
+        'element': 'eecef3a6-f503-40a0-9a96-203c2f64c174',
       },
       'target': {
         'direction': 'Down',
-        'element': 'ebc633af-df92-4c24-b238-12c74465055b'
-      }
-    }
+        'element': 'ebc633af-df92-4c24-b238-12c74465055b',
+      },
+    },
   ],
-  'assessments': []
+  'assessments': [],
 };
 
 export const predefinedPlanarityModel = {
   'version': '2.0.0',
   'type': 'MarkedGraph',
-  'size': {
-    'width': 940,
-    'height': 720
-  },
-  'interactive': {
-    'elements': [],
-    'relationships': []
-  },
-  'elements': [
-    {
-      'id': '520b4ceb-17bd-4905-baec-9e6fa652041e',
-      'name': '2',
-      'type': 'MarkedGraphNode',
-      'owner': null,
-      'bounds': {
-        'x': 420,
-        'y': 80,
-        'width': 100,
-        'height': 100
-      },
-      'marking': false
-    },
-    {
-      'id': 'c93120a6-e791-43b0-a4d9-ac77ecb3f977',
-      'name': '3',
-      'type': 'MarkedGraphNode',
-      'owner': null,
-      'bounds': {
-        'x': 720,
-        'y': 250,
-        'width': 100,
-        'height': 100
-      },
-      'marking': false
-    },
-    {
-      'id': '9e31cd0d-fbe0-4eec-8b5b-08b4846c6297',
-      'name': '4',
-      'type': 'MarkedGraphNode',
-      'owner': null,
-      'bounds': {
-        'x': 600,
-        'y': 530,
-        'width': 100,
-        'height': 100
-      },
-      'marking': false
-    },
-    {
-      'id': 'f17fdc6d-7f88-40af-96cd-cba3f0c1e6bc',
-      'name': '5',
-      'type': 'MarkedGraphNode',
-      'owner': null,
-      'bounds': {
-        'x': 200,
-        'y': 530,
-        'width': 100,
-        'height': 100
-      },
-      'marking': false
-    },
-    {
-      'id': 'b0133ea6-46e6-40fc-8dca-778eb85686e0',
-      'name': '1',
-      'type': 'MarkedGraphNode',
-      'owner': null,
-      'bounds': {
-        'x': 40,
-        'y': 250,
-        'width': 100,
-        'height': 100
-      },
-      'marking': false
-    }
-  ],
-  'relationships': [
-    {
-      'id': 'fed99bcd-5b25-41f2-8db7-aef6e9d62ca6',
-      'name': '(3,4)',
-      'type': 'MarkedGraphEdge',
-      'owner': null,
-      'bounds': {
-        'x': 700,
-        'y': 300,
-        'width': 189.6666660308838,
-        'height': 280
-      },
-      'path': [
-        {
-          'x': 0,
-          'y': 280
-        },
-        {
-          'x': 160,
-          'y': 280
-        },
-        {
-          'x': 160,
-          'y': 0
-        },
-        {
-          'x': 120,
-          'y': 0
-        }
-      ],
-      'source': {
-        'direction': 'Right',
-        'element': '9e31cd0d-fbe0-4eec-8b5b-08b4846c6297'
-      },
-      'target': {
-        'direction': 'Right',
-        'element': 'c93120a6-e791-43b0-a4d9-ac77ecb3f977'
-      }
-    },
-    {
-      'id': '195a67dd-41e1-4527-a39e-be953de51649',
-      'name': '(4,5)',
-      'type': 'MarkedGraphEdge',
-      'owner': null,
-      'bounds': {
-        'x': 250,
-        'y': 630,
-        'width': 400,
-        'height': 40
-      },
-      'path': [
-        {
-          'x': 400,
-          'y': 0
-        },
-        {
-          'x': 400,
-          'y': 40
-        },
-        {
-          'x': 0,
-          'y': 40
-        },
-        {
-          'x': 0,
-          'y': 0
-        }
-      ],
-      'source': {
-        'direction': 'Down',
-        'element': '9e31cd0d-fbe0-4eec-8b5b-08b4846c6297'
-      },
-      'target': {
-        'direction': 'Down',
-        'element': 'f17fdc6d-7f88-40af-96cd-cba3f0c1e6bc'
-      }
-    },
-    {
-      'id': 'bc94c9f9-fdac-4f59-ad2e-06f480f1bf14',
-      'name': '(5,1)',
-      'type': 'MarkedGraphEdge',
-      'owner': null,
-      'bounds': {
-        'x': 0,
-        'y': 300,
-        'width': 200,
-        'height': 280
-      },
-      'path': [
-        {
-          'x': 200,
-          'y': 280
-        },
-        {
-          'x': 0,
-          'y': 280
-        },
-        {
-          'x': 0,
-          'y': 0
-        },
-        {
-          'x': 40,
-          'y': 0
-        }
-      ],
-      'source': {
-        'direction': 'Left',
-        'element': 'f17fdc6d-7f88-40af-96cd-cba3f0c1e6bc'
-      },
-      'target': {
-        'direction': 'Left',
-        'element': 'b0133ea6-46e6-40fc-8dca-778eb85686e0'
-      }
-    },
-    {
-      'id': '52b172d0-c621-4ba7-9fc3-ba348287d076',
-      'name': '(1,2)',
-      'type': 'MarkedGraphEdge',
-      'owner': null,
-      'bounds': {
-        'x': 0,
-        'y': 0,
-        'width': 470,
-        'height': 300
-      },
-      'path': [
-        {
-          'x': 470,
-          'y': 80
-        },
-        {
-          'x': 470,
-          'y': 40
-        },
-        {
-          'x': 0,
-          'y': 40
-        },
-        {
-          'x': 0,
-          'y': 300
-        },
-        {
-          'x': 40,
-          'y': 300
-        }
-      ],
-      'source': {
-        'direction': 'Up',
-        'element': '520b4ceb-17bd-4905-baec-9e6fa652041e'
-      },
-      'target': {
-        'direction': 'Left',
-        'element': 'b0133ea6-46e6-40fc-8dca-778eb85686e0'
-      }
-    },
-    {
-      'id': '5e6465c5-3a59-4ade-975e-654806fe19e0',
-      'name': '(2,5)',
-      'type': 'MarkedGraphEdge',
-      'owner': null,
-      'bounds': {
-        'x': 300,
-        'y': 180,
-        'width': 199.6666660308838,
-        'height': 400
-      },
-      'path': [
-        {
-          'x': 170,
-          'y': 0
-        },
-        {
-          'x': 170,
-          'y': 400
-        },
-        {
-          'x': 0,
-          'y': 400
-        }
-      ],
-      'source': {
-        'direction': 'Down',
-        'element': '520b4ceb-17bd-4905-baec-9e6fa652041e'
-      },
-      'target': {
-        'direction': 'Right',
-        'element': 'f17fdc6d-7f88-40af-96cd-cba3f0c1e6bc'
-      }
-    },
-    {
-      'id': '4b15edea-5272-406d-9d1c-75475f8907d0',
-      'name': '(2,4)',
-      'type': 'MarkedGraphEdge',
-      'owner': null,
-      'bounds': {
-        'x': 470,
-        'y': 180,
-        'width': 130,
-        'height': 400
-      },
-      'path': [
-        {
-          'x': 0,
-          'y': 0
-        },
-        {
-          'x': 0,
-          'y': 400
-        },
-        {
-          'x': 130,
-          'y': 400
-        }
-      ],
-      'source': {
-        'direction': 'Down',
-        'element': '520b4ceb-17bd-4905-baec-9e6fa652041e'
-      },
-      'target': {
-        'direction': 'Left',
-        'element': '9e31cd0d-fbe0-4eec-8b5b-08b4846c6297'
-      }
-    },
-    {
-      'id': 'faeb5c78-d089-4c9b-8e6f-9062a8dbc567',
-      'name': '(1,3)',
-      'type': 'MarkedGraphEdge',
-      'owner': null,
-      'bounds': {
-        'x': 140,
-        'y': 260,
-        'width': 580,
-        'height': 41
-      },
-      'path': [
-        {
-          'x': 0,
-          'y': 40
-        },
-        {
-          'x': 580,
-          'y': 40
-        }
-      ],
-      'source': {
-        'direction': 'Right',
-        'element': 'b0133ea6-46e6-40fc-8dca-778eb85686e0'
-      },
-      'target': {
-        'direction': 'Left',
-        'element': 'c93120a6-e791-43b0-a4d9-ac77ecb3f977'
-      }
-    },
-    {
-      'id': '401595a8-ece8-4207-b1aa-2c4f6182255b',
-      'name': '(1,4)',
-      'type': 'MarkedGraphEdge',
-      'owner': null,
-      'bounds': {
-        'x': 140,
-        'y': 260,
-        'width': 510,
-        'height': 270
-      },
-      'path': [
-        {
-          'x': 510,
-          'y': 270
-        },
-        {
-          'x': 510,
-          'y': 40
-        },
-        {
-          'x': 0,
-          'y': 40
-        }
-      ],
-      'source': {
-        'direction': 'Up',
-        'element': '9e31cd0d-fbe0-4eec-8b5b-08b4846c6297'
-      },
-      'target': {
-        'direction': 'Right',
-        'element': 'b0133ea6-46e6-40fc-8dca-778eb85686e0'
-      }
-    },
-    {
-      'id': '12765a85-4eed-4c40-9bc3-2c9c36f8562b',
-      'name': '(3,5)',
-      'type': 'MarkedGraphEdge',
-      'owner': null,
-      'bounds': {
-        'x': 250,
-        'y': 260,
-        'width': 470,
-        'height': 270
-      },
-      'path': [
-        {
-          'x': 0,
-          'y': 270
-        },
-        {
-          'x': 0,
-          'y': 40
-        },
-        {
-          'x': 470,
-          'y': 40
-        }
-      ],
-      'source': {
-        'direction': 'Up',
-        'element': 'f17fdc6d-7f88-40af-96cd-cba3f0c1e6bc'
-      },
-      'target': {
-        'direction': 'Left',
-        'element': 'c93120a6-e791-43b0-a4d9-ac77ecb3f977'
-      }
-    }
-  ],
-  'assessments': []
+  'size': { 'width': 860, 'height': 622 },
+  'interactive': { 'elements': [], 'relationships': [] },
+  'elements': [{
+    'id': '520b4ceb-17bd-4905-baec-9e6fa652041e',
+    'name': '2',
+    'type': 'MarkedGraphNode',
+    'owner': null,
+    'bounds': { 'x': 360, 'y': 0, 'width': 100, 'height': 100 },
+    'marking': false,
+  }, {
+    'id': 'c93120a6-e791-43b0-a4d9-ac77ecb3f977',
+    'name': '3',
+    'type': 'MarkedGraphNode',
+    'owner': null,
+    'bounds': { 'x': 680, 'y': 200, 'width': 100, 'height': 100 },
+    'marking': false,
+  }, {
+    'id': '9e31cd0d-fbe0-4eec-8b5b-08b4846c6297',
+    'name': '4',
+    'type': 'MarkedGraphNode',
+    'owner': null,
+    'bounds': { 'x': 550, 'y': 480, 'width': 100, 'height': 100 },
+    'marking': false,
+  }, {
+    'id': 'f17fdc6d-7f88-40af-96cd-cba3f0c1e6bc',
+    'name': '5',
+    'type': 'MarkedGraphNode',
+    'owner': null,
+    'bounds': { 'x': 160, 'y': 480, 'width': 100, 'height': 100 },
+    'marking': false,
+  }, {
+    'id': 'b0133ea6-46e6-40fc-8dca-778eb85686e0',
+    'name': '1',
+    'type': 'MarkedGraphNode',
+    'owner': null,
+    'bounds': { 'x': 0, 'y': 200, 'width': 100, 'height': 100 },
+    'marking': false,
+  }],
+  'relationships': [{
+    'id': 'fed99bcd-5b25-41f2-8db7-aef6e9d62ca6',
+    'name': '(3,4)',
+    'type': 'MarkedGraphEdge',
+    'owner': null,
+    'bounds': { 'x': 650, 'y': 300, 'width': 80, 'height': 230 },
+    'path': [{ 'x': 0, 'y': 230 }, { 'x': 80, 'y': 0 }],
+    'source': { 'direction': 'Right', 'element': '9e31cd0d-fbe0-4eec-8b5b-08b4846c6297' },
+    'target': { 'direction': 'Down', 'element': 'c93120a6-e791-43b0-a4d9-ac77ecb3f977' },
+  }, {
+    'id': '195a67dd-41e1-4527-a39e-be953de51649',
+    'name': '(4,5)',
+    'type': 'MarkedGraphEdge',
+    'owner': null,
+    'bounds': { 'x': 210, 'y': 540, 'width': 390, 'height': 41 },
+    'path': [{ 'x': 390, 'y': 40 }, { 'x': 0, 'y': 40 }],
+    'source': { 'direction': 'Down', 'element': '9e31cd0d-fbe0-4eec-8b5b-08b4846c6297' },
+    'target': { 'direction': 'Down', 'element': 'f17fdc6d-7f88-40af-96cd-cba3f0c1e6bc' },
+  }, {
+    'id': 'bc94c9f9-fdac-4f59-ad2e-06f480f1bf14',
+    'name': '(5,1)',
+    'type': 'MarkedGraphEdge',
+    'owner': null,
+    'bounds': { 'x': 50, 'y': 300, 'width': 110, 'height': 230 },
+    'path': [{ 'x': 110, 'y': 230 }, { 'x': 0, 'y': 0 }],
+    'source': { 'direction': 'Left', 'element': 'f17fdc6d-7f88-40af-96cd-cba3f0c1e6bc' },
+    'target': { 'direction': 'Down', 'element': 'b0133ea6-46e6-40fc-8dca-778eb85686e0' },
+  }, {
+    'id': '52b172d0-c621-4ba7-9fc3-ba348287d076',
+    'name': '(1,2)',
+    'type': 'MarkedGraphEdge',
+    'owner': null,
+    'bounds': { 'x': 50, 'y': 50, 'width': 310, 'height': 150 },
+    'path': [{ 'x': 310, 'y': 0 }, { 'x': 0, 'y': 150 }],
+    'source': { 'direction': 'Left', 'element': '520b4ceb-17bd-4905-baec-9e6fa652041e' },
+    'target': { 'direction': 'Up', 'element': 'b0133ea6-46e6-40fc-8dca-778eb85686e0' },
+  }, {
+    'id': '5e6465c5-3a59-4ade-975e-654806fe19e0',
+    'name': '(2,5)',
+    'type': 'MarkedGraphEdge',
+    'owner': null,
+    'bounds': { 'x': 210, 'y': 100, 'width': 200, 'height': 380 },
+    'path': [{ 'x': 200, 'y': 0 }, { 'x': 0, 'y': 380 }],
+    'source': { 'direction': 'Down', 'element': '520b4ceb-17bd-4905-baec-9e6fa652041e' },
+    'target': { 'direction': 'Up', 'element': 'f17fdc6d-7f88-40af-96cd-cba3f0c1e6bc' },
+  }, {
+    'id': '4b15edea-5272-406d-9d1c-75475f8907d0',
+    'name': '(2,4)',
+    'type': 'MarkedGraphEdge',
+    'owner': null,
+    'bounds': { 'x': 410, 'y': 100, 'width': 190, 'height': 380 },
+    'path': [{ 'x': 0, 'y': 0 }, { 'x': 190, 'y': 380 }],
+    'source': { 'direction': 'Down', 'element': '520b4ceb-17bd-4905-baec-9e6fa652041e' },
+    'target': { 'direction': 'Up', 'element': '9e31cd0d-fbe0-4eec-8b5b-08b4846c6297' },
+  }, {
+    'id': 'faeb5c78-d089-4c9b-8e6f-9062a8dbc567',
+    'name': '(1,3)',
+    'type': 'MarkedGraphEdge',
+    'owner': null,
+    'bounds': { 'x': 100, 'y': 210, 'width': 580, 'height': 41 },
+    'path': [{ 'x': 0, 'y': 40 }, { 'x': 580, 'y': 40 }],
+    'source': { 'direction': 'Right', 'element': 'b0133ea6-46e6-40fc-8dca-778eb85686e0' },
+    'target': { 'direction': 'Left', 'element': 'c93120a6-e791-43b0-a4d9-ac77ecb3f977' },
+  }, {
+    'id': '401595a8-ece8-4207-b1aa-2c4f6182255b',
+    'name': '(1,4)',
+    'type': 'MarkedGraphEdge',
+    'owner': null,
+    'bounds': { 'x': 100, 'y': 250, 'width': 450, 'height': 280 },
+    'path': [{ 'x': 450, 'y': 280 }, { 'x': 0, 'y': 0 }],
+    'source': { 'direction': 'Left', 'element': '9e31cd0d-fbe0-4eec-8b5b-08b4846c6297' },
+    'target': { 'direction': 'Right', 'element': 'b0133ea6-46e6-40fc-8dca-778eb85686e0' },
+  }, {
+    'id': '12765a85-4eed-4c40-9bc3-2c9c36f8562b',
+    'name': '(3,5)',
+    'type': 'MarkedGraphEdge',
+    'owner': null,
+    'bounds': { 'x': 260, 'y': 250, 'width': 420, 'height': 280 },
+    'path': [{ 'x': 0, 'y': 280 }, { 'x': 420, 'y': 0 }],
+    'source': { 'direction': 'Right', 'element': 'f17fdc6d-7f88-40af-96cd-cba3f0c1e6bc' },
+    'target': { 'direction': 'Left', 'element': 'c93120a6-e791-43b0-a4d9-ac77ecb3f977' },
+  }],
+  'assessments': [],
 };
