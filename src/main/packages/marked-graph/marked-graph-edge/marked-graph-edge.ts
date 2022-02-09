@@ -13,5 +13,6 @@ export class MarkedGraphEdge extends UMLRelationshipCenteredDescription {
   constructor(values?: DeepPartial<IUMLRelationship>) {
     super(values);
     this.name = (values && values.name) || this.name;
+    MarkedGraphEdge.features.straight = true;
   }
 }
