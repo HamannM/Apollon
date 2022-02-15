@@ -34,16 +34,24 @@
       <aside class="sidebar">
 
         <section>
+
+        </section>
+        <section id='submitAssessmentSection' style='display:none'>
           <div class="switch">
             <button onclick="apollon.draw()">Export (JSON)</button>
           </div>
-        </section>
-        <section id='submitAssessmentSection' style='display:none'>
           <h3 class="header">Assessment</h3>
           <div class="switch">
             <button onclick="apollon.submitSolution()">Submit Solution</button>
           </div>
-          <div></div>
+          <h3 class="header">Help</h3>
+          <div class="switch">
+            <button class="hint" onclick="apollon.submitSolution()">Request Hint</button>
+            <button class='solution' onclick="apollon.submitSolution()">Request Solution</button>
+          </div>
+        </section>
+        <section id='assessmentHelp'>
+
         </section>
         <section id="assessmentFeedbackSection" style='display:none'>
           <h3 class="header">Feedback</h3>

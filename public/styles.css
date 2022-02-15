@@ -151,6 +151,14 @@ aside.sidebar section > div {
   outline: none;
 }
 
+.switch button.hint {
+  background: rgba(255, 213, 106, 0.4);
+}
+
+.switch button.solution {
+  background: rgba(255, 106, 106, 0.4);
+}
+
 .switch button:first-child {
   border-top-left-radius: 0.25rem;
   border-bottom-left-radius: 0.25rem;
