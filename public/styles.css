@@ -151,8 +151,12 @@ aside.sidebar section > div {
   outline: none;
 }
 
+.switch button.submit {
+  background: rgba(47, 253, 0, 0.16);
+}
+
 .switch button.hint {
-  background: rgba(255, 213, 106, 0.4);
+  background: rgba(249, 255, 0, 0.18);
 }
 
 .switch button.solution {

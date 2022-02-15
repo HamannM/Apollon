@@ -9,7 +9,7 @@
   <body>
     <header class="navbar">
       <a class="navbar-brand logo float-left">
-        <img class="logo-img" src="images/logo.png" />
+        <img class="logo-img" src="images/logo.png"  alt=''/>
         <span>&nbsp;&nbsp;&nbsp;</span>
         <span class="navbar-title">Apollon</span>&nbsp;&nbsp;&nbsp;<span class="navbar-version">
           <%=htmlWebpackPlugin.options.version%>
@@ -19,7 +19,7 @@
     <div class='taskbar'>
         <h3 class="header">Choose your task</h3>
         <div class="dropdown">
-          <select name="task" id="taskDropDown">
+          <label for="taskDropDown"></label><select name="task" id="taskDropDown">
             <option selected disabled>Choose..</option>
             <option value="PLANARITY" >Planarity</option>
             <option value="CONNECTIVITY">Connectivity</option>
@@ -42,7 +42,7 @@
           </div>
           <h3 class="header">Assessment</h3>
           <div class="switch">
-            <button onclick="apollon.submitSolution()">Submit Solution</button>
+            <button class='submit' onclick="apollon.submitSolution()">Submit Solution</button>
           </div>
           <h3 class="header">Help</h3>
           <div class="switch">
