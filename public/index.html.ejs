@@ -17,7 +17,7 @@
       </a>
     </header>
     <div class='taskbar'>
-        <h3 class="header">Choose your task</h3>
+        <h3 class="header">Choose a class of tasks</h3>
         <div class="dropdown">
           <label for="taskDropDown"></label><select name="task" id="taskDropDown">
             <option selected disabled>Choose..</option>
@@ -33,12 +33,13 @@
       <main id="apollon"></main>
       <aside class="sidebar">
 
-        <section>
-
+        <section id='introSection'>
+          Please select a class of tasks in the header.
         </section>
         <section id='submitAssessmentSection' style='display:none'>
+          <h3 class="header">Task</h3>
           <div class="switch">
-            <button onclick="apollon.draw()">Export (JSON)</button>
+            <button onclick="apollon.requestNextTask()">Next Task</button>
           </div>
           <h3 class="header">Assessment</h3>
           <div class="switch">
@@ -46,8 +47,12 @@
           </div>
           <h3 class="header">Help</h3>
           <div class="switch">
-            <button class="hint" onclick="apollon.submitSolution()">Request Hint</button>
-            <button class='solution' onclick="apollon.submitSolution()">Request Solution</button>
+            <button class="hint" onclick="apollon.requestHint()">Request Hint</button>
+            <button class='solution' onclick="apollon.requestSolution()">Request Solution</button>
+          </div>
+          <h3 class="header">Auxiliary</h3>
+          <div class="switch">
+            <button onclick="apollon.draw()">Export (JSON)</button>
           </div>
         </section>
         <section id='assessmentHelp'>

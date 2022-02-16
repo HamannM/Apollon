@@ -131,6 +131,18 @@ export function submitSolution() {
   });
 }
 
+export function requestNextTask(){
+  //
+}
+
+export function requestHint(){
+  //
+}
+
+export function requestSolution(){
+  //
+}
+
 async function requestAssessment(payload: Apollon.UMLModel | undefined) {
   toggleDomElementDisplayById('assessmentFeedbackSection');
   const assessmentResponse = await fetch('http://0.0.0.0:8889/graphAssessment', {

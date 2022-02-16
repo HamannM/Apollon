@@ -3,9 +3,11 @@ export const taskDropDown = (document.getElementById('taskDropDown')) as HTMLSel
 export const assessmentResultsDOMNode = document.getElementById('assessmentResults');
 const assessmentFeedbackSection = document.getElementById('assessmentFeedbackSection');
 const waitingForAssessmentResultsDOMNode = document.getElementById('waitingForAssessmentResults');
+const introDOMNode = document.getElementById('introSection');
 export const submitAssessmentSection = document.getElementById('submitAssessmentSection');
 
 export function resetAssessmentUiElements() {
+  introDOMNode!.style.display = 'none';
   assessmentFeedbackSection!.style.display = 'none';
   waitingForAssessmentResultsDOMNode!.style.display = 'inline';
   assessmentResultsDOMNode!.innerHTML = '';
