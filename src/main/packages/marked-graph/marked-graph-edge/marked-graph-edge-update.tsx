@@ -1,15 +1,12 @@
 import React, { Component, ComponentClass } from 'react';
 import { connect } from 'react-redux';
 import { compose } from 'redux';
-import { Button } from '../../../components/controls/button/button';
-import { TrashIcon } from '../../../components/controls/icon/trash';
 import { Textfield } from '../../../components/controls/textfield/textfield';
 import { I18nContext } from '../../../components/i18n/i18n-context';
 import { localized } from '../../../components/i18n/localized';
 import { ModelState } from '../../../components/store/model-state';
 import { styled } from '../../../components/theme/styles';
 import { UMLElementRepository } from '../../../services/uml-element/uml-element-repository';
-import { ExchangeIcon } from '../../../components/controls/icon/exchange';
 import { UMLRelationshipRepository } from '../../../services/uml-relationship/uml-relationship-repository';
 import { MarkedGraphEdge } from './marked-graph-edge';
 
@@ -61,9 +58,6 @@ class MarkedGraphEdgeUpdateComponent extends Component<Props> {
     this.props.update(id, { name: value });
   };
 
-  private delete = (id: string) => () => {
-    this.props.delete(id);
-  };
 }
 
 export const MarkedGraphEdgeUpdate = enhance(MarkedGraphEdgeUpdateComponent);
