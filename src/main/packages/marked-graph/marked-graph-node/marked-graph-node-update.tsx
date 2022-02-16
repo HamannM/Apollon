@@ -48,9 +48,6 @@ class MarkedGraphNodeUpdateComponent extends Component<Props> {
         <section>
           <Flex>
             <Textfield value={element.name} onChange={this.rename(element.id)} autoFocus />
-            <Button color="link" tabIndex={-1} onClick={this.delete(element.id)}>
-              <TrashIcon />
-            </Button>
           </Flex>
           <Divider />
         </section>
