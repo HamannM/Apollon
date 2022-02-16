@@ -133,7 +133,7 @@ export function submitSolution() {
 
 async function requestAssessment(payload: Apollon.UMLModel | undefined) {
   toggleDomElementDisplayById('assessmentFeedbackSection');
-  const assessmentResponse = await fetch('/graphAssessment', {
+  const assessmentResponse = await fetch('http://0.0.0.0:8889/graphAssessment', {
     method: 'POST',
     body: JSON.stringify(payload),
   });
