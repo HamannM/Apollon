@@ -19,7 +19,8 @@
     <div class='taskbar'>
         <h3 class="header">Choose a class of tasks</h3>
         <div class="dropdown">
-          <label for="taskDropDown"></label><select name="task" id="taskDropDown">
+          <label for="taskDropDown"></label>
+          <select name="task" id="taskDropDown">
             <option selected disabled>Choose..</option>
             <option value="PLANARITY" >Planarity</option>
             <option value="CONNECTIVITY">Connectivity</option>
@@ -37,11 +38,15 @@
           Please select a class of tasks in the header.
         </section>
         <section id='submitAssessmentSection' style='display:none'>
-          <h3 class="header">Task</h3>
-          <div class="switch">
-            <button onclick="apollon.requestNextTask()">Next Task</button>
+          <div class='switch'>
+            <form>
+              <p id='assessmentQuestion'>Question?</p>
+                <input type="radio" id="assesmentOption0" name="assesmentQuestion" value="assesmentOption0">
+                <label for="mc"> Option1</label><br/>
+                <input type="radio" id="assesmentOption1" name="assesmentQuestion" value="assesmentOption0">
+                <label for="vi"> Option2</label>
+            </form>
           </div>
-          <h3 class="header">Assessment</h3>
           <div class="switch">
             <button class='submit' onclick="apollon.submitSolution()">Submit Solution</button>
           </div>
@@ -49,6 +54,10 @@
           <div class="switch">
             <button class="hint" onclick="apollon.requestHint()">Request Hint</button>
             <button class='solution' onclick="apollon.requestSolution()">Request Solution</button>
+          </div>
+          <h3 class="header">Task</h3>
+          <div class="switch">
+            <button onclick="apollon.requestNextTask()">Next Task</button>
           </div>
           <h3 class="header">Auxiliary</h3>
           <div class="switch">
