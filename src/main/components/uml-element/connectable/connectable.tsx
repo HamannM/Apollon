@@ -17,6 +17,7 @@ import { UMLElementType, UMLRelationshipType } from '../../..';
 import { convertTouchEndIntoPointerUp } from '../../../utils/touch-event';
 import isMobile from 'is-mobile';
 import { getPortsForElement, IUMLElement } from '../../../services/uml-element/uml-element';
+import { MarkedGraphElementType, MarkedGraphRelationshipType } from '../../../packages/marked-graph';
 
 type StateProps = {
   hovered: boolean;
@@ -244,6 +245,10 @@ export const connectable = (
 
     private onPointerDown = (event: React.PointerEvent<SVGSVGElement>) => {
       const direction = event.currentTarget.getAttribute('direction') as Direction;
+      // prevent redrawing relations in marked graph node type. Hacky, I'm sorry.
+      if(this.props.type === MarkedGraphElementType.MarkedGraphNode){
+        return;
+      }
       this.props.start(direction);
     };
 

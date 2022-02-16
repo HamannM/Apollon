@@ -14,5 +14,7 @@ export class MarkedGraphEdge extends UMLRelationshipCenteredDescription {
     super(values);
     this.name = (values && values.name) || this.name;
     MarkedGraphEdge.features.straight = true;
+    MarkedGraphEdge.features.connectable = false;
+    MarkedGraphEdge.features.reconnectable = false;
   }
 }
