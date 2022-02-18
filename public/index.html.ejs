@@ -22,9 +22,9 @@
           <label for="taskDropDown"></label>
           <select name="task" id="taskDropDown">
             <option selected disabled>Choose..</option>
-            <option value="PLANARITY" >Planarity</option>
-            <option value="CONNECTIVITY">Connectivity</option>
-            <option value="CUT_VERTEX">Cut Vertex</option>
+            <option value="PLANARITY" >Planar Graphs</option>
+            <option value="EULERIAN">Eulerian Graphs</option>
+            <option value="BIPARTITE">Bipartite Graphs</option>
           </select>
           <div id="taskDescription">
           </div>
@@ -57,7 +57,7 @@
           </div>
           <h3 class="header">Task</h3>
           <div class="switch">
-            <button onclick="apollon.requestNextTask()">Next Task</button>
+            <button onclick="apollon.requestNextGraph()">Next Graph</button>
           </div>
           <h3 class="header">Auxiliary</h3>
           <div class="switch">

@@ -1,7 +1,6 @@
 import * as Apollon from '../src/main';
 import { ApollonMode } from '../src/main';
 import './styles.css';
-import { taskDescriptionMap, taskModelMap } from './sageAssessmentTasks';
 import {
   assessmentResultsDOMNode,
   resetAssessmentUiElements,
@@ -92,12 +91,7 @@ function loadDemoModel(taskKey: string){
   }
 }
 
-taskDropDown.addEventListener('change', (e) => {
-  taskDescriptionNode!.innerHTML = taskDescriptionMap.get(taskDropDown.value)!;
-  submitAssessmentSection!.style.display = 'inline';
-  loadDemoModel(taskDropDown.value);
-  resetAssessmentUiElements();
-});
+taskDropDown.addEventListener('change', requestNextGraph);
 
 export function submitSolution() {
   resetAssessmentUiElements();
@@ -131,8 +125,20 @@ export function submitSolution() {
   });
 }
 
-export function requestNextTask(){
-  //
+export async function requestNextGraph() {
+  const assessmentResponse = await fetch('http://0.0.0.0:8889/requestTask?taskType=' + taskDropDown.value, {
+    method: 'GET'
+  }).then( (response) => response.body)
+    .then( (body) => body.getReader());
+  if (assessmentResponse.ok) {
+    // tslint:disable-next-line:no-console
+    // @ts-ignore
+    // tslint:disable-next-line:no-console
+    console.log(assessmentResponse.body);
+    resetAssessmentUiElements();
+  } else {
+    alert('Could not load task data');
+  }
 }
 
 export function requestHint(){
