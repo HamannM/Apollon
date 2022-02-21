@@ -41,14 +41,14 @@
           <div class='switch'>
             <form>
               <p id='assessmentQuestion'>Question?</p>
-                <input type="radio" id="assesmentOption0" name="assesmentQuestion" value="assesmentOption0">
-                <label for="mc"> Option1</label><br/>
-                <input type="radio" id="assesmentOption1" name="assesmentQuestion" value="assesmentOption0">
-                <label for="vi"> Option2</label>
+                <input type="radio" id="assesmentOption0" name="assessmentQuestionAnswer" value="yes">
+                <label for="assesmentOption0"> yes</label><br/>
+                <input type="radio" id="assesmentOption1" name="assessmentQuestionAnswer" value="no">
+                <label for="assesmentOption1"> no</label>
             </form>
           </div>
           <div class="switch">
-            <button class='submit' onclick="apollon.submitSolution()">Submit Solution</button>
+            <button class='submit' onclick="apollon.submitSolutionOrHint()">Submit Solution</button>
           </div>
           <h3 class="header">Help</h3>
           <div class="switch">

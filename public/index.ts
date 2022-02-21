@@ -2,7 +2,7 @@ import * as Apollon from '../src/main';
 import { ApollonMode } from '../src/main';
 import './styles.css';
 import {
-  assessmentResultsDOMNode,
+  assessmentResultsDOMNode, initializeAssessmentUiElements,
   resetAssessmentUiElements,
   submitAssessmentSection,
   taskDescriptionNode,
@@ -11,6 +11,9 @@ import {
 } from './sageAssessmentUiElements';
 import { AssessmentResponse } from './sageAssessmentResponse';
 import { AssessmentResultType } from './sageAssessmentResultType';
+import { SageAssessmentState } from './sageAssessmentState';
+
+let currentSageAssessmentState: SageAssessmentState;
 
 const container = document.getElementById('apollon')!;
 let editor: Apollon.ApollonEditor | null = null;
@@ -19,7 +22,7 @@ let options: Apollon.ApollonOptions = {
   colorEnabled: false,
   scale: 0.75,
   type: 'MarkedGraph',
-  mode: ApollonMode.GraphInspection
+  mode: ApollonMode.GraphInspection,
 };
 
 export const onChange = (event: MouseEvent) => {
@@ -56,9 +59,9 @@ export const draw = (mode?: 'include' | 'exclude') => {
   elem.download = 'model.json';
   elem.style.display = 'none';
   document.body.appendChild(elem);
-  elem.click();        
+  elem.click();
   document.body.removeChild(elem);
-  
+
   /*
   const filter: string[] = [...editor.model.interactive.elements, ...editor.model.interactive.relationships];
 
@@ -79,44 +82,66 @@ const render = () => {
 render();
 
 const getModelAsJson = () => {
-  if (!editor) return { };
+  if (!editor) return {};
   return editor.model;
 };
 
-function loadDemoModel(taskKey: string){
-  if(editor != null){
-    // @ts-ignore
-    const newModel : UMLModel = taskModelMap.get(taskKey);
-    editor.model = newModel;
-  }
-}
-
 taskDropDown.addEventListener('change', requestNextGraph);
 
-export function submitSolution() {
-  resetAssessmentUiElements();
+function generateAssessmentRequestJson() {
   const payload = getModelAsJson();
   // tslint:disable-next-line:no-console
   console.log(editor!.model);
   // for the sake of the prototype..
   // @ts-ignore
   payload!.taskType = taskDropDown.value;
+  // @ts-ignore
+  payload!.participantAnswer = participantAnswer;
+  // @ts-ignore
+  payload!.hintLevel = currentSageAssessmentState.hintLevel;
+
+  const participantAnswer = document.querySelector('input[name="assessmentQuestionAnswer"]:checked');
+  if (participantAnswer != null) {
+    // @ts-ignore
+    payload!.solution = participantAnswer.value;
+  }
+
+  return payload;
+}
+
+export function submitSolutionOrHint() {
+/*  const participantAnswer = document.querySelector('input[name="assessmentQuestionAnswer"]:checked');
+  if (participantAnswer == null) {
+    alert('Select an answer first.');
+    return;
+  }*/
+  resetAssessmentUiElements();
+  toggleDomElementDisplayById('assessmentFeedbackSection');
+
+  const payload = generateAssessmentRequestJson();
 
   // @ts-ignore
   requestAssessment(payload).then((response) => {
-    const assessmentResponse : AssessmentResponse =  {
-      assessmentResponseType : response.assessmentResponse,
-      message : response.message
+    // tslint:disable-next-line:no-console
+    console.log(response);
+
+    const assessmentResponse: AssessmentResponse = {
+      assessmentResponseType: response.assessmentResponse,
+      message: response.message,
     };
 
     assessmentResultsDOMNode!.innerHTML = assessmentResponse.message;
 
-    if(assessmentResponse.assessmentResponseType === AssessmentResultType.PASS){
+    if (assessmentResponse.assessmentResponseType === AssessmentResultType.PASS) {
       assessmentResultsDOMNode!.classList.add('assessment-success');
-    }else{
+    }
+    if (assessmentResponse.assessmentResponseType === AssessmentResultType.ERROR
+      || assessmentResponse.assessmentResponseType === AssessmentResultType.FAIL) {
       assessmentResultsDOMNode!.classList.add('assessment-error');
     }
-
+    if (assessmentResponse.assessmentResponseType === AssessmentResultType.HINT) {
+      const x = 1;
+    }
     toggleDomElementDisplayById('waitingForAssessmentResults');
   }).catch((error) => {
     assessmentResultsDOMNode!.innerHTML = 'An internal error has occurred.';
@@ -127,36 +152,47 @@ export function submitSolution() {
 
 export async function requestNextGraph() {
   const assessmentResponse = await fetch('http://0.0.0.0:8889/requestTask?taskType=' + taskDropDown.value, {
-    method: 'GET'
-  }).then( (response) => response.body)
-    .then( (body) => body.getReader());
-  if (assessmentResponse.ok) {
+    method: 'GET',
+  }).then((response) => response.json())
     // tslint:disable-next-line:no-console
-    // @ts-ignore
-    // tslint:disable-next-line:no-console
-    console.log(assessmentResponse.body);
-    resetAssessmentUiElements();
-  } else {
-    alert('Could not load task data');
-  }
+    .then((responseJson) => {
+      if (editor != null) {
+        editor.model = responseJson.model;
+        initializeAssessmentUiElements(responseJson.question);
+        resetAssessmentState(responseJson.modelId);
+      }
+    });
 }
 
-export function requestHint(){
+export async function requestHint() {
+  const ele = document.getElementsByName('assessmentQuestionAnswer');
+  // @ts-ignore
+  for(const eleItem of ele)
+    { // @ts-ignore
+      eleItem.checked = false;
+    }
+  await submitSolutionOrHint();
+  currentSageAssessmentState.hintLevel++;
+}
+
+export function requestSolution() {
   //
 }
 
-export function requestSolution(){
-  //
-}
-
-async function requestAssessment(payload: Apollon.UMLModel | undefined) {
-  toggleDomElementDisplayById('assessmentFeedbackSection');
+async function requestAssessment(payload: any) {
   const assessmentResponse = await fetch('http://0.0.0.0:8889/graphAssessment', {
     method: 'POST',
     body: JSON.stringify(payload),
+    /*    headers: {
+          'pragma': 'no-cache',
+          'cache-control': 'no-cache'
+        }*/
   });
-  if(assessmentResponse.ok){
+  if (assessmentResponse.ok) {
     return assessmentResponse.json();
   }
 }
 
+function resetAssessmentState(modelId: string) {
+  currentSageAssessmentState = new SageAssessmentState(modelId);
+}

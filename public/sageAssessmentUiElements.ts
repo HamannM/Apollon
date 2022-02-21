@@ -4,7 +4,14 @@ export const assessmentResultsDOMNode = document.getElementById('assessmentResul
 const assessmentFeedbackSection = document.getElementById('assessmentFeedbackSection');
 const waitingForAssessmentResultsDOMNode = document.getElementById('waitingForAssessmentResults');
 const introDOMNode = document.getElementById('introSection');
+const questionDOMNode = document.getElementById('assessmentQuestion');
 export const submitAssessmentSection = document.getElementById('submitAssessmentSection');
+
+export function initializeAssessmentUiElements(question : string) {
+  resetAssessmentUiElements();
+  submitAssessmentSection!.style.display = 'inline';
+  questionDOMNode!.innerHTML = question;
+}
 
 export function resetAssessmentUiElements() {
   introDOMNode!.style.display = 'none';
