@@ -110,18 +110,13 @@ function generateAssessmentRequestJson() {
 }
 
 export function submitSolutionOrHint() {
-/*  const participantAnswer = document.querySelector('input[name="assessmentQuestionAnswer"]:checked');
-  if (participantAnswer == null) {
-    alert('Select an answer first.');
-    return;
-  }*/
   resetAssessmentUiElements();
   toggleDomElementDisplayById('assessmentFeedbackSection');
 
   const payload = generateAssessmentRequestJson();
 
   // @ts-ignore
-  requestAssessment(payload).then((response) => {
+  sendNonCachedGraphAssessmentRequest(payload).then((response) => {
     // tslint:disable-next-line:no-console
     console.log(response);
 
@@ -167,26 +162,34 @@ export async function requestNextGraph() {
 export async function requestHint() {
   const ele = document.getElementsByName('assessmentQuestionAnswer');
   // @ts-ignore
-  for(const eleItem of ele)
-    { // @ts-ignore
-      eleItem.checked = false;
-    }
+  for (const eleItem of ele) { // @ts-ignore
+    eleItem.checked = false;
+  }
   await submitSolutionOrHint();
   currentSageAssessmentState.hintLevel++;
+}
+
+export async function submitSolution() {
+  const participantAnswer = document.querySelector('input[name="assessmentQuestionAnswer"]:checked');
+  if (participantAnswer == null) {
+    alert('Select an answer first.');
+    return;
+  }
+  submitSolutionOrHint();
 }
 
 export function requestSolution() {
   //
 }
 
-async function requestAssessment(payload: any) {
+async function sendNonCachedGraphAssessmentRequest(payload: any) {
   const assessmentResponse = await fetch('http://0.0.0.0:8889/graphAssessment', {
     method: 'POST',
     body: JSON.stringify(payload),
-    /*    headers: {
-          'pragma': 'no-cache',
-          'cache-control': 'no-cache'
-        }*/
+/*    headers: {
+      'pragma': 'no-cache',
+      'cache-control': 'no-cache',
+    },*/
   });
   if (assessmentResponse.ok) {
     return assessmentResponse.json();
