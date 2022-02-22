@@ -186,10 +186,10 @@ async function sendNonCachedGraphAssessmentRequest(payload: any) {
   const assessmentResponse = await fetch('http://0.0.0.0:8889/graphAssessment', {
     method: 'POST',
     body: JSON.stringify(payload),
-/*    headers: {
+    headers: {
       'pragma': 'no-cache',
       'cache-control': 'no-cache',
-    },*/
+    },
   });
   if (assessmentResponse.ok) {
     return assessmentResponse.json();
