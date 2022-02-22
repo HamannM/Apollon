@@ -4,7 +4,7 @@ import './styles.css';
 import {
   assessmentResultsDOMNode, initializeAssessmentUiElements,
   resetAssessmentUiElements,
-  submitAssessmentSection,
+  submitAssessmentSection, submitSolutionButton,
   taskDescriptionNode,
   taskDropDown,
   toggleDomElementDisplayById,
@@ -134,8 +134,10 @@ export function submitSolutionOrHint() {
       || assessmentResponse.assessmentResponseType === AssessmentResultType.FAIL) {
       assessmentResultsDOMNode!.classList.add('assessment-error');
     }
-    if (assessmentResponse.assessmentResponseType === AssessmentResultType.HINT) {
-      const x = 1;
+    if (assessmentResponse.assessmentResponseType === AssessmentResultType.MAX_HINT_LEVEL_NOTIFICATION) {
+      assessmentResultsDOMNode!.classList.add('assessment-error');
+      // @ts-ignore
+      submitSolutionButton.disabled = true;
     }
     toggleDomElementDisplayById('waitingForAssessmentResults');
   }).catch((error) => {

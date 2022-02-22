@@ -6,6 +6,7 @@ const waitingForAssessmentResultsDOMNode = document.getElementById('waitingForAs
 const introDOMNode = document.getElementById('introSection');
 const questionDOMNode = document.getElementById('assessmentQuestion');
 export const submitAssessmentSection = document.getElementById('submitAssessmentSection');
+export const submitSolutionButton = document.getElementById('submitSolutionButton');
 
 export function initializeAssessmentUiElements(question : string) {
   resetAssessmentUiElements();
@@ -14,6 +15,8 @@ export function initializeAssessmentUiElements(question : string) {
 }
 
 export function resetAssessmentUiElements() {
+  // @ts-ignore
+  submitSolutionButton.disabled = false;
   introDOMNode!.style.display = 'none';
   assessmentFeedbackSection!.style.display = 'none';
   waitingForAssessmentResultsDOMNode!.style.display = 'inline';

@@ -2,5 +2,6 @@ export enum AssessmentResultType {
   PASS = 'PASS',
   FAIL = 'FAIL',
   ERROR = 'ERROR',
-  HINT = 'HINT'
+  HINT = 'HINT',
+  MAX_HINT_LEVEL_NOTIFICATION = 'MAX_HINT_LEVEL_NOTIFICATION'
 }
