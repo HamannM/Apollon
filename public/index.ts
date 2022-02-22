@@ -148,7 +148,8 @@ export function submitSolutionOrHint() {
 }
 
 export async function requestNextGraph() {
-  const assessmentResponse = await fetch('http://0.0.0.0:8889/requestTask?taskType=' + taskDropDown.value, {
+  const url = window.location.protocol + '//' + window.location.hostname + ':8889/requestTask?taskType=' + taskDropDown.value;
+  const assessmentResponse = await fetch(url, {
     method: 'GET',
     mode: 'cors',
   }).then((response) => response.json())
@@ -185,7 +186,8 @@ export function requestSolution() {
 }
 
 async function sendNonCachedGraphAssessmentRequest(payload: any) {
-  const assessmentResponse = await fetch('http://0.0.0.0:8889/graphAssessment', {
+  const url = window.location.protocol + '//' + window.location.hostname + ':8889/graphAssessment';
+  const assessmentResponse = await fetch(url, {
     mode: 'cors',
     method: 'POST',
     body: JSON.stringify(payload),
