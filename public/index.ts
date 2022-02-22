@@ -148,8 +148,8 @@ export function submitSolutionOrHint() {
 export async function requestNextGraph() {
   const assessmentResponse = await fetch('http://0.0.0.0:8889/requestTask?taskType=' + taskDropDown.value, {
     method: 'GET',
+    mode: 'cors',
   }).then((response) => response.json())
-    // tslint:disable-next-line:no-console
     .then((responseJson) => {
       if (editor != null) {
         editor.model = responseJson.model;
@@ -184,12 +184,9 @@ export function requestSolution() {
 
 async function sendNonCachedGraphAssessmentRequest(payload: any) {
   const assessmentResponse = await fetch('http://0.0.0.0:8889/graphAssessment', {
+    mode: 'cors',
     method: 'POST',
     body: JSON.stringify(payload),
-    headers: {
-      'pragma': 'no-cache',
-      'cache-control': 'no-cache',
-    },
   });
   if (assessmentResponse.ok) {
     return assessmentResponse.json();
